@@ -24,9 +24,11 @@ import { SITE_TITLE } from '../consts';
 				<p class="intro">
 				Preorders are open for cookie delivery mid-Feburary!
 				</p>
+				<!--
 				<p class="intro">
 				Cookies are $6/box. Our troop earns at least $1/box that our girls sell. This money is pooled within the troop and pays for most of our troop activities throughout the year, allowing the girls to plan activities within the troop's budget, not the budget of individual scouts. Most of the rest of the cookie cost goes to the local/regional GS organization to support affordable programs in STEM, outdoors, and life skills (which our girls participate in). 5% goes to individual girl prizes and badges. 20% of the cookie cost goes to the bakery.
 				</p>
+				-->
 
 
 
@@ -35,7 +37,7 @@ import { SITE_TITLE } from '../consts';
 					<div class="media-grid">
 						<!-- Add your photos and videos here -->
 						<div class="media-placeholder">
-							<p>Media coming soon!</p>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/cH6llpB7tFA?si=zwoD12oM-fgX7Q3u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 						</div>
 					</div>
 				</section>
@@ -107,22 +109,24 @@ import { SITE_TITLE } from '../consts';
 	}
 
 	.media-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-		gap: 1rem;
+		width: 100%;
 	}
 
 	.media-placeholder {
-		background: var(--star-green);
-		border: 3px solid var(--forest-green);
+		position: relative;
+		width: 100%;
+		padding-bottom: 56.25%; /* 16:9 aspect ratio */
+		height: 0;
+		overflow: hidden;
 		border-radius: 10px;
-		padding: 3rem;
-		text-align: center;
-		color: var(--forest-green);
-		min-height: 200px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-weight: bold;
+	}
+
+	.media-placeholder iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: none;
 	}
 </style>
