@@ -15,16 +15,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<main>
 			<div class="profile">
 				<div class="photo-placeholder">
-					<!-- Add your daughter's photo here -->
-					<p>Photo coming soon!</p>
+					<img src="/wini-headshot-potter-cuties.jpg" alt="Wini's photo" />
 				</div>
 				<div class="bio">
 					<h1>Welcome to Wini's Digital Cookie Booth!</h1>
 					<p>
-						Hi! I'm Wini and I'm 9 years old.
+						Hi! I'm Wini.
 					</p>
 					<p>
-						Please check out <a href="/cookies-2026">my cookie page for fun movies and the link to buy Girl Scout Cookies!</a>
+						Please check out <a href="/cookies-2026">my cookie page</a> for fun movies and the link to buy Girl Scout Cookies!
 					</p>
 				</div>
 			</div>
@@ -51,6 +50,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		justify-content: center;
 		color: var(--forest-green);
 		font-weight: bold;
+		overflow: hidden;
+	}
+
+	.photo-placeholder img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 
 	.bio {
