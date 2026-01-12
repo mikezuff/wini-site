@@ -14,14 +14,21 @@ import { SITE_TITLE } from '../consts';
 		<Header />
 		<main>
 			<div class="cookies-content">
-				<h1>Cookies 2026</h1>
-				<p class="intro">Welcome to my cookie sale page! Here you'll find all the information about my cookie sales.</p>
+				<h1>Girl Scout Cookies 2026</h1>
 
 				<section class="links-section">
 					<ul>
 						<li><a href="https://digitalcookie.girlscouts.org/scout/winifred83871">Click here to order your Girl Scout Cookies!</a></li>
 					</ul>
 				</section>
+				<p class="intro">
+				Preorders are open for cookie delivery mid-Feburary!
+				</p>
+				<p class="intro">
+				Cookies are $6/box. Our troop earns at least $1/box that our girls sell. This money is pooled within the troop and pays for most of our troop activities throughout the year, allowing the girls to plan activities within the troop's budget, not the budget of individual scouts. Most of the rest of the cookie cost goes to the local/regional GS organization to support affordable programs in STEM, outdoors, and life skills (which our girls participate in). 5% goes to individual girl prizes and badges. 20% of the cookie cost goes to the bakery.
+				</p>
+
+
 
 				<section class="media-section">
 					<h2>Photos & Videos</h2>
@@ -42,9 +49,11 @@ import { SITE_TITLE } from '../consts';
 		max-width: 900px;
 		margin: 0 auto;
 		padding: 2rem;
+		font-family: Helvetica, Arial, sans-serif;
 	}
 
 	h1 {
+		font-family: 'Palatino Linotype', Palatino, serif;
 		font-size: 2.5rem;
 		margin-bottom: 1rem;
 		color: rgb(var(--black));
@@ -61,6 +70,7 @@ import { SITE_TITLE } from '../consts';
 	}
 
 	h2 {
+		font-family: Helvetica, Arial, sans-serif;
 		font-size: 1.8rem;
 		margin-bottom: 1rem;
 		color: rgb(var(--black));
@@ -69,26 +79,31 @@ import { SITE_TITLE } from '../consts';
 	.links-section ul {
 		list-style: none;
 		padding: 0;
+		display: flex;
+		justify-content: center;
 	}
 
 	.links-section li {
 		margin: 1rem 0;
-		padding: 1rem;
+		padding: 1.5rem 2rem;
 		background: white;
-		border-radius: 8px;
+		border: 3px solid var(--star-green);
+		border-radius: 15px;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		text-align: center;
+		max-width: 600px;
 	}
 
 	.links-section a {
 		color: var(--forest-green);
 		text-decoration: none;
-		font-size: 1.1rem;
+		font-size: 1.2rem;
 		font-weight: 600;
+		display: block;
 	}
 
 	.links-section a:hover {
 		color: var(--girl-scout-green);
-		text-decoration: underline;
 	}
 
 	.media-grid {
