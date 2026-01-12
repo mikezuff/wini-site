@@ -14,17 +14,32 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<Header />
 		<main>
 			<div class="profile">
-				<div class="photo-placeholder">
-					<img src="/wini-headshot-potter-cuties.jpg" alt="Wini's photo" />
-				</div>
+				<div class="sparkle sparkle-1">✨</div>
+				<div class="sparkle sparkle-2">⭐</div>
+				<div class="sparkle sparkle-3">🌟</div>
+				<div class="sparkle sparkle-4">✨</div>
+				<div class="cookie-icon cookie-1">🍪</div>
+				<div class="cookie-icon cookie-2">🍪</div>
+
 				<div class="bio">
 					<h1>Welcome to Wini's Digital Cookie Booth!</h1>
-					<p>
-						Hi! I'm Wini.
+				</div>
+
+				<div class="photo-container">
+					<div class="photo-frame">
+						<img src="/wini-headshot-potter-cuties.jpg" alt="Wini's photo" />
+					</div>
+				</div>
+
+				<div class="welcome-box">
+					<p class="greeting">
+						Hi! I'm Wini. 👋
 					</p>
-					<p>
-						Please check out <a href="/cookies-2026">my cookie page</a> for fun movies and the link to buy Girl Scout Cookies!
-					</p>
+					<div class="action-box">
+						<p>
+							Please check out <a href="/cookies-2026">my cookie page</a> for fun movies and the link to buy Girl Scout Cookies!
+						</p>
+					</div>
 				</div>
 			</div>
 		</main>
@@ -35,42 +50,232 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	.profile {
 		max-width: 800px;
 		margin: 0 auto;
-		padding: 2rem;
+		padding: 1rem;
+		position: relative;
 	}
 
-	.photo-placeholder {
-		width: 300px;
-		height: 300px;
-		margin: 2rem auto;
-		background: var(--star-green);
-		border: 3px solid var(--forest-green);
-		border-radius: 10px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: var(--forest-green);
-		font-weight: bold;
-		overflow: hidden;
+	.sparkle {
+		position: absolute;
+		font-size: 2rem;
+		animation: twinkle 2s ease-in-out infinite;
+		opacity: 0.8;
 	}
 
-	.photo-placeholder img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+	.sparkle-1 {
+		top: 10%;
+		left: 5%;
+		animation-delay: 0s;
+	}
+
+	.sparkle-2 {
+		top: 20%;
+		right: 10%;
+		animation-delay: 0.5s;
+	}
+
+	.sparkle-3 {
+		bottom: 30%;
+		left: 8%;
+		animation-delay: 1s;
+	}
+
+	.sparkle-4 {
+		bottom: 15%;
+		right: 5%;
+		animation-delay: 1.5s;
+	}
+
+	.cookie-icon {
+		position: absolute;
+		font-size: 3rem;
+		animation: float 3s ease-in-out infinite;
+	}
+
+	.cookie-1 {
+		top: 15%;
+		right: 5%;
+		animation-delay: 0s;
+	}
+
+	.cookie-2 {
+		bottom: 20%;
+		left: 3%;
+		animation-delay: 1.5s;
+	}
+
+	@keyframes twinkle {
+		0%, 100% {
+			transform: scale(1) rotate(0deg);
+			opacity: 0.8;
+		}
+		50% {
+			transform: scale(1.3) rotate(180deg);
+			opacity: 1;
+		}
+	}
+
+	@keyframes float {
+		0%, 100% {
+			transform: translateY(0px) rotate(0deg);
+		}
+		50% {
+			transform: translateY(-20px) rotate(10deg);
+		}
 	}
 
 	.bio {
 		text-align: center;
-		margin-top: 2rem;
+		margin-bottom: 2rem;
+		position: relative;
+		z-index: 2;
 	}
 
 	.bio h1 {
-		font-size: 2rem;
+		font-size: 2.2rem;
 		margin-bottom: 1rem;
+		padding: 1rem;
+		background: linear-gradient(135deg, var(--sunshine-yellow) 0%, var(--peach) 100%);
+		border-radius: 25px;
+		border: 5px solid var(--girl-scout-green);
+		box-shadow: var(--fun-shadow);
+		display: inline-block;
+		transform: rotate(-1deg);
+		animation: wiggle 3s ease-in-out infinite;
 	}
 
-	.bio p {
-		font-size: 1.1rem;
+	@keyframes wiggle {
+		0%, 100% {
+			transform: rotate(-1deg);
+		}
+		25% {
+			transform: rotate(0.5deg);
+		}
+		75% {
+			transform: rotate(-0.5deg);
+		}
+	}
+
+	.photo-container {
+		display: flex;
+		justify-content: center;
+		margin: 2rem auto;
+		position: relative;
+		z-index: 2;
+	}
+
+	.photo-frame {
+		width: 320px;
+		height: 320px;
+		background: var(--purple);
+		border-radius: 30px;
+		border: 8px solid var(--forest-green);
+		box-shadow:
+			var(--fun-shadow),
+			inset 0 0 20px rgba(255, 255, 255, 0.3);
+		overflow: hidden;
+		transform: rotate(2deg);
+		transition: transform 0.3s ease;
+		position: relative;
+	}
+
+	.photo-frame::before {
+		content: '🎀';
+		position: absolute;
+		top: -15px;
+		right: -15px;
+		font-size: 3rem;
+		z-index: 10;
+		transform: rotate(15deg);
+	}
+
+	.photo-frame:hover {
+		transform: rotate(-2deg) scale(1.05);
+	}
+
+	.photo-frame img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border: none;
+		border-radius: 22px;
+	}
+
+	.welcome-box {
+		text-align: center;
+		margin-top: 2rem;
+		position: relative;
+		z-index: 2;
+	}
+
+	.greeting {
+		font-size: 1.8rem;
+		font-weight: 700;
+		color: var(--forest-green);
+		margin-bottom: 1.5rem;
+		text-shadow: 2px 2px 0px rgba(255, 217, 61, 0.5);
+	}
+
+	.action-box {
+		background: linear-gradient(135deg, var(--star-green) 0%, var(--sky-blue) 100%);
+		padding: 2rem;
+		border-radius: 25px;
+		border: 5px dashed var(--purple);
+		box-shadow: var(--box-shadow);
+		display: inline-block;
+		max-width: 500px;
+		transform: rotate(0.5deg);
+	}
+
+	.action-box p {
+		font-size: 1.3rem;
+		font-weight: 600;
+		color: var(--forest-green);
+		margin: 0;
 		line-height: 1.6;
+	}
+
+	.action-box a {
+		color: var(--girl-scout-green);
+		text-decoration: underline;
+		text-decoration-thickness: 3px;
+		text-underline-offset: 4px;
+		font-weight: 700;
+		display: inline-block;
+		padding: 0.2rem 0.5rem;
+		background: rgba(255, 255, 255, 0.6);
+		border-radius: 10px;
+		transition: all 0.2s ease;
+	}
+
+	.action-box a:hover {
+		background: white;
+		transform: scale(1.1) rotate(-2deg);
+	}
+
+	@media (max-width: 720px) {
+		.bio h1 {
+			font-size: 1.5rem;
+		}
+
+		.photo-frame {
+			width: 250px;
+			height: 250px;
+		}
+
+		.sparkle, .cookie-icon {
+			font-size: 1.5rem;
+		}
+
+		.greeting {
+			font-size: 1.4rem;
+		}
+
+		.action-box {
+			padding: 1.5rem;
+		}
+
+		.action-box p {
+			font-size: 1.1rem;
+		}
 	}
 </style>

@@ -14,31 +14,48 @@ import { SITE_TITLE } from '../consts';
 		<Header />
 		<main>
 			<div class="cookies-content">
-				<h1>Girl Scout Cookies 2026</h1>
+				<div class="cookie-scatter cookie-scatter-1">🍪</div>
+				<div class="cookie-scatter cookie-scatter-2">🍪</div>
+				<div class="cookie-scatter cookie-scatter-3">🍪</div>
+				<div class="cookie-scatter cookie-scatter-4">🍪</div>
+				<div class="cookie-scatter cookie-scatter-5">🍪</div>
+				<div class="heart-icon heart-1">💚</div>
+				<div class="heart-icon heart-2">💜</div>
+				<div class="star-icon">⭐</div>
+
+				<div class="title-container">
+					<h1>🍪 Girl Scout Cookies 2026 🍪</h1>
+				</div>
 
 				<section class="links-section">
-					<ul>
-						<li>Preorders are open for cookie delivery mid-Feburary!</li>
-						<li><a href="https://digitalcookie.girlscouts.org/scout/winifred83871" class="order-link">Click here</a> to order your Girl Scout Cookies!</li>
-						<li>Or let us know if you'd like to order your cookies in person.</li>
-					</ul>
+					<div class="info-bubble bubble-1">
+						<div class="bubble-content">
+							🎉 Preorders are open for cookie delivery mid-February!
+						</div>
+					</div>
+
+					<div class="order-button-container">
+						<a href="https://digitalcookie.girlscouts.org/scout/winifred83871" class="order-button">
+							<span class="button-icon">🛒</span>
+							<span class="button-text">Click here to order your Girl Scout Cookies!</span>
+							<span class="button-shine"></span>
+						</a>
+					</div>
+
+					<div class="info-bubble bubble-2">
+						<div class="bubble-content">
+							📞 Or let us know if you'd like to order your cookies in person!
+						</div>
+					</div>
 				</section>
-				<p class="intro">
-				</p>
-				<!--
-				<p class="intro">
-				Cookies are $6/box. Our troop earns at least $1/box that our girls sell. This money is pooled within the troop and pays for most of our troop activities throughout the year, allowing the girls to plan activities within the troop's budget, not the budget of individual scouts. Most of the rest of the cookie cost goes to the local/regional GS organization to support affordable programs in STEM, outdoors, and life skills (which our girls participate in). 5% goes to individual girl prizes and badges. 20% of the cookie cost goes to the bakery.
-				</p>
-				-->
-
-
 
 				<section class="media-section">
-					<h2>Photos & Videos</h2>
-					<div class="media-grid">
-						<!-- Add your photos and videos here -->
-						<div class="media-placeholder">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/cH6llpB7tFA?si=zwoD12oM-fgX7Q3u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+					<div class="section-header">
+						<h2>🎬 Photos & Videos 🎬</h2>
+					</div>
+					<div class="video-container">
+						<div class="video-frame">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/cH6llpB7tFA?si=zwoD12oM-fgX7Q3u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 						</div>
 					</div>
 				</section>
@@ -51,96 +68,377 @@ import { SITE_TITLE } from '../consts';
 	.cookies-content {
 		max-width: 900px;
 		margin: 0 auto;
-		padding: 2rem;
-		font-family: Helvetica, Arial, sans-serif;
+		padding: 1rem;
+		position: relative;
+	}
+
+	.cookie-scatter {
+		position: absolute;
+		font-size: 2.5rem;
+		animation: spin-float 4s ease-in-out infinite;
+		opacity: 0.7;
+		z-index: 0;
+	}
+
+	.cookie-scatter-1 {
+		top: 5%;
+		left: 2%;
+		animation-delay: 0s;
+	}
+
+	.cookie-scatter-2 {
+		top: 15%;
+		right: 5%;
+		animation-delay: 0.8s;
+	}
+
+	.cookie-scatter-3 {
+		top: 45%;
+		left: 1%;
+		animation-delay: 1.6s;
+	}
+
+	.cookie-scatter-4 {
+		top: 60%;
+		right: 3%;
+		animation-delay: 2.4s;
+	}
+
+	.cookie-scatter-5 {
+		bottom: 10%;
+		left: 10%;
+		animation-delay: 3.2s;
+	}
+
+	.heart-icon {
+		position: absolute;
+		font-size: 2rem;
+		animation: pulse 2s ease-in-out infinite;
+		z-index: 0;
+	}
+
+	.heart-1 {
+		top: 30%;
+		right: 8%;
+		animation-delay: 0s;
+	}
+
+	.heart-2 {
+		bottom: 25%;
+		right: 12%;
+		animation-delay: 1s;
+	}
+
+	.star-icon {
+		position: absolute;
+		top: 70%;
+		left: 5%;
+		font-size: 2.5rem;
+		animation: twinkle-rotate 3s ease-in-out infinite;
+		z-index: 0;
+	}
+
+	@keyframes spin-float {
+		0%, 100% {
+			transform: translateY(0px) rotate(0deg);
+		}
+		50% {
+			transform: translateY(-15px) rotate(180deg);
+		}
+	}
+
+	@keyframes pulse {
+		0%, 100% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.2);
+		}
+	}
+
+	@keyframes twinkle-rotate {
+		0%, 100% {
+			transform: rotate(0deg) scale(1);
+			opacity: 0.8;
+		}
+		50% {
+			transform: rotate(180deg) scale(1.3);
+			opacity: 1;
+		}
+	}
+
+	.title-container {
+		text-align: center;
+		margin-bottom: 2rem;
+		position: relative;
+		z-index: 2;
 	}
 
 	h1 {
-		font-family: 'Palatino Linotype', Palatino, serif;
 		font-size: 2.5rem;
-		font-weight: bold;
-		margin: 0 -2rem 1.5rem -2rem;
-		padding: 1rem 2rem;
-		background: #005640;
+		padding: 1.5rem 2rem;
+		background: linear-gradient(135deg, var(--girl-scout-green) 0%, var(--purple) 100%);
 		color: white;
-		border-radius: 8px;
-		text-align: center;
+		border-radius: 30px;
+		border: 6px solid var(--sunshine-yellow);
+		box-shadow: var(--fun-shadow);
+		display: inline-block;
+		transform: rotate(-1.5deg);
+		animation: wiggle-big 4s ease-in-out infinite;
+		text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
 	}
 
-	.intro {
-		font-size: 1.1rem;
-		margin-bottom: 1.5rem;
-		color: rgb(var(--gray-dark));
-		line-height: 1.6;
+	@keyframes wiggle-big {
+		0%, 100% {
+			transform: rotate(-1.5deg);
+		}
+		25% {
+			transform: rotate(1deg);
+		}
+		50% {
+			transform: rotate(-0.5deg);
+		}
+		75% {
+			transform: rotate(0.5deg);
+		}
 	}
 
-	section {
+	.links-section {
 		margin: 3rem 0;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		align-items: center;
+		position: relative;
+		z-index: 2;
+	}
+
+	.info-bubble {
+		max-width: 600px;
+		width: 100%;
+		animation: bubble-bob 3s ease-in-out infinite;
+	}
+
+	.bubble-1 {
+		animation-delay: 0s;
+	}
+
+	.bubble-2 {
+		animation-delay: 1.5s;
+	}
+
+	@keyframes bubble-bob {
+		0%, 100% {
+			transform: translateY(0px) rotate(0deg);
+		}
+		50% {
+			transform: translateY(-8px) rotate(1deg);
+		}
+	}
+
+	.bubble-content {
+		padding: 1.8rem 2rem;
+		background: linear-gradient(135deg, var(--peach) 0%, var(--sunshine-yellow) 100%);
+		border: 5px solid var(--forest-green);
+		border-radius: 30px;
+		box-shadow: var(--box-shadow);
+		font-size: 1.3rem;
+		font-weight: 700;
+		color: var(--forest-green);
+		text-align: center;
+		position: relative;
+		transform: rotate(-0.5deg);
+	}
+
+	.bubble-content::after {
+		content: '';
+		position: absolute;
+		bottom: -15px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 0;
+		height: 0;
+		border-left: 15px solid transparent;
+		border-right: 15px solid transparent;
+		border-top: 15px solid var(--forest-green);
+	}
+
+	.order-button-container {
+		width: 100%;
+		max-width: 600px;
+		display: flex;
+		justify-content: center;
+		margin: 1rem 0;
+	}
+
+	.order-button {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.8rem;
+		padding: 2rem 3rem;
+		background: linear-gradient(135deg, var(--star-green) 0%, var(--sky-blue) 100%);
+		border: 6px solid var(--girl-scout-green);
+		border-radius: 25px;
+		box-shadow:
+			var(--fun-shadow),
+			inset 0 2px 10px rgba(255, 255, 255, 0.5);
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--forest-green);
+		text-decoration: none;
+		transform: rotate(1deg);
+		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+		animation: button-bounce 2s ease-in-out infinite;
+	}
+
+	@keyframes button-bounce {
+		0%, 100% {
+			transform: rotate(1deg) scale(1);
+		}
+		50% {
+			transform: rotate(-0.5deg) scale(1.05);
+		}
+	}
+
+	.order-button:hover {
+		transform: rotate(-2deg) scale(1.1);
+		box-shadow:
+			8px 8px 0px rgba(0, 0, 0, 0.25),
+			inset 0 2px 15px rgba(255, 255, 255, 0.7);
+		animation: none;
+	}
+
+	.button-icon {
+		font-size: 2rem;
+	}
+
+	.button-text {
+		position: relative;
+		z-index: 2;
+	}
+
+	.button-shine {
+		position: absolute;
+		top: -50%;
+		left: -50%;
+		width: 200%;
+		height: 200%;
+		background: linear-gradient(
+			45deg,
+			transparent 30%,
+			rgba(255, 255, 255, 0.3) 50%,
+			transparent 70%
+		);
+		transform: rotate(45deg);
+		animation: shine 3s ease-in-out infinite;
+	}
+
+	@keyframes shine {
+		0% {
+			left: -50%;
+		}
+		100% {
+			left: 150%;
+		}
+	}
+
+	.media-section {
+		margin: 4rem 0 2rem 0;
+		position: relative;
+		z-index: 2;
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 2rem;
 	}
 
 	h2 {
-		font-family: Helvetica, Arial, sans-serif;
-		font-size: 1.5rem;
-		font-weight: bold;
-		margin: 0 -2rem 1.5rem -2rem;
-		padding: 1rem 2rem;
-		background: #622e8b;
+		font-size: 2rem;
+		padding: 1.2rem 2rem;
+		background: linear-gradient(135deg, var(--purple) 0%, var(--girl-scout-green) 100%);
 		color: white;
-		border-radius: 8px;
+		border-radius: 25px;
+		border: 5px solid var(--sunshine-yellow);
+		box-shadow: var(--box-shadow);
+		display: inline-block;
+		transform: rotate(0.5deg);
+		text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 	}
 
-	.links-section ul {
-		list-style: none;
-		padding: 0;
+	.video-container {
 		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 1rem;
+		justify-content: center;
+		margin: 2rem auto;
 	}
 
-	.links-section li {
-		padding: 1.5rem 2rem;
-		background: white;
-		border: 3px solid var(--star-green);
-		border-radius: 15px;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-		text-align: center;
-		max-width: 600px;
-		width: 100%;
-		font-size: 1.2rem;
-		font-weight: 600;
-		color: var(--forest-green);
-	}
-
-	.links-section a.order-link {
-		color: #622e8b;
-		text-decoration: underline;
-		font-weight: 700;
-	}
-
-	.links-section a.order-link:hover {
-		color: #7a3aa3;
-	}
-
-	.media-grid {
-		width: 100%;
-	}
-
-	.media-placeholder {
+	.video-frame {
 		position: relative;
 		width: 100%;
-		padding-bottom: 56.25%; /* 16:9 aspect ratio */
+		max-width: 700px;
+		padding-bottom: 56.25%;
 		height: 0;
+		background: var(--star-green);
+		border-radius: 25px;
+		border: 6px solid var(--purple);
+		box-shadow: var(--fun-shadow);
 		overflow: hidden;
-		border-radius: 10px;
+		transform: rotate(-1deg);
 	}
 
-	.media-placeholder iframe {
+	.video-frame iframe {
 		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+		top: 10px;
+		left: 10px;
+		width: calc(100% - 20px);
+		height: calc(100% - 20px);
 		border: none;
+		border-radius: 18px;
+	}
+
+	@media (max-width: 720px) {
+		h1 {
+			font-size: 1.8rem;
+			padding: 1.2rem 1.5rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			padding: 1rem 1.5rem;
+		}
+
+		.cookie-scatter {
+			font-size: 1.8rem;
+		}
+
+		.heart-icon {
+			font-size: 1.5rem;
+		}
+
+		.star-icon {
+			font-size: 2rem;
+		}
+
+		.bubble-content {
+			font-size: 1.1rem;
+			padding: 1.5rem 1.5rem;
+		}
+
+		.order-button {
+			font-size: 1.2rem;
+			padding: 1.5rem 2rem;
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		.button-icon {
+			font-size: 1.5rem;
+		}
+
+		.video-frame {
+			border-width: 4px;
+		}
 	}
 </style>
