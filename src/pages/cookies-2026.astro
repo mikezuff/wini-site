@@ -18,11 +18,12 @@ import { SITE_TITLE } from '../consts';
 
 				<section class="links-section">
 					<ul>
-						<li><a href="https://digitalcookie.girlscouts.org/scout/winifred83871">Click here to order your Girl Scout Cookies!</a></li>
+						<li>Preorders are open for cookie delivery mid-Feburary!</li>
+						<li><a href="https://digitalcookie.girlscouts.org/scout/winifred83871" class="order-link">Click here</a> to order your Girl Scout Cookies!</li>
+						<li>Or let us know if you'd like to order your cookies in person.</li>
 					</ul>
 				</section>
 				<p class="intro">
-				Preorders are open for cookie delivery mid-Feburary!
 				</p>
 				<!--
 				<p class="intro">
@@ -92,11 +93,12 @@ import { SITE_TITLE } from '../consts';
 		list-style: none;
 		padding: 0;
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
 	}
 
 	.links-section li {
-		margin: 1rem 0;
 		padding: 1.5rem 2rem;
 		background: white;
 		border: 3px solid var(--star-green);
@@ -104,18 +106,20 @@ import { SITE_TITLE } from '../consts';
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 		text-align: center;
 		max-width: 600px;
-	}
-
-	.links-section a {
-		color: var(--forest-green);
-		text-decoration: none;
+		width: 100%;
 		font-size: 1.2rem;
 		font-weight: 600;
-		display: block;
+		color: var(--forest-green);
 	}
 
-	.links-section a:hover {
-		color: var(--girl-scout-green);
+	.links-section a.order-link {
+		color: #622e8b;
+		text-decoration: underline;
+		font-weight: 700;
+	}
+
+	.links-section a.order-link:hover {
+		color: #7a3aa3;
 	}
 
 	.media-grid {
