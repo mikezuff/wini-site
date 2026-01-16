@@ -66,7 +66,7 @@ import { SITE_TITLE } from '../consts';
 					</div>
 					<div class="video-container">
 						2025 Suspect Meme
-						<div class="video-frame">
+						<div class="video-frame-right">
 							<iframe width="560" height="315" src="https://www.youtube.com/embed/2f2w4rMdXVs?si=4pJ0Xd4UOq5EsWdV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 						</div>
 					</div>
@@ -395,7 +395,21 @@ import { SITE_TITLE } from '../consts';
 		transform: rotate(-1deg);
 	}
 
-	.video-frame iframe {
+	.video-frame-right {
+		position: relative;
+		width: 100%;
+		max-width: 700px;
+		padding-bottom: 44.25%;
+		height: 0;
+		background: var(--star-green);
+		border-radius: 35px;
+		border: 6px solid var(--purple);
+		box-shadow: var(--fun-shadow);
+		overflow: hidden;
+		transform: rotate(1deg);
+	}
+	.video-frame iframe,
+	.video-frame-right iframe {
 		position: absolute;
 		top: 10px;
 		left: 10px;
